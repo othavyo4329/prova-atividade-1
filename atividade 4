@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale (LC_ALL,"");
+
+    int rows, cols;
+
+    printf("Digite o número de linhas da matriz: ");
+    scanf("%d", &rows);
+    printf("Digite o número de colunas da matriz: ");
+    scanf("%d", &cols);
+
+    int matriz[rows][cols];
+    int matrizTransposta[cols][rows];
+
+    printf("Digite os elementos da matriz:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            matrizTransposta[j][i] = matriz[i][j];
+        }
+    }
+
+    printf("Matriz Transposta:\n");
+    for (int i = 0; i < cols; i++) {
+        for (int j = 0; j < rows; j++) {
+            printf("%d ", matrizTransposta[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
