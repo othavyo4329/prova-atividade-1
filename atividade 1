@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+void copia_string(char destino[], const char origem[]) {
+    strcpy(destino, origem);
+}
+
+int main() {
+    setlocale(LC_ALL, "");
+    char destino[100];
+    char string_origem[] = "conteudo que vai na variável";
+
+    copia_string(destino, "string de origem");
+    printf("Destino: %s\n", destino);
+
+    copia_string(destino, string_origem);
+    printf("Destino: %s\n", destino);
+    return 0;
+}
